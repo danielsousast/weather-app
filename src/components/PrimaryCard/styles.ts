@@ -1,10 +1,16 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-  min-height: 240px;
+  height: 250px;
+  width: 100%;
   background: ${({ theme }) => theme.colors.blue};
   border-radius: 12px;
   align-items: flex-end;
+`;
+
+export const Wrapper = styled.View`
+  height: 250px;
+  width: 100%;
   padding: 24px;
 `;
 
@@ -18,7 +24,6 @@ export const Content = styled.View`
   flex: 1;
   width: 100%;
   flex-direction: row;
-  padding-top: 24px;
 `;
 
 export const LeftContent = styled.View`
@@ -59,4 +64,14 @@ export const Subtitle = styled.Text`
 export const Image = styled.Image`
   width: 100px;
   height: 100px;
+  margin-top: 20px;
+`;
+
+export const ImageBrackgound = styled.Image`
+  position: absolute;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  z-index: -999;
+  opacity: 0.1;
 `;
