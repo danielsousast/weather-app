@@ -10,6 +10,7 @@ import {
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto';
 import AppLoading from 'expo-app-loading';
+import { Navigation } from './navigation';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -23,7 +24,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <Dashboard />
+      <Navigation />
       <StatusBar style="light" />
     </ThemeProvider>
   );

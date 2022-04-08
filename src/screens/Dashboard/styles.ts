@@ -24,3 +24,15 @@ export const HeaderText = styled.Text`
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fonts.medium};
 `;
+
+export const LinkButton = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+export const LinkButtonText = styled.Text`
+  margin-top: 32px;
+  color: ${({ theme }) => theme.colors.blue};
+  font-family: ${({ theme }) => theme.fonts.medium};
+`;
