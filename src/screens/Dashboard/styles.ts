@@ -19,7 +19,8 @@ export const CardsWrapper = styled.View`
 export const HeaderText = styled.Text`
   align-self: center;
   font-size: 20px;
-  color: #fff;
   margin-top: 16px;
   margin-bottom: 24px;
+  color: ${({ theme }) => theme.colors.white};
+  font-family: ${({ theme }) => theme.fonts.medium};
 `;

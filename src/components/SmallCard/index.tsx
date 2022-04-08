@@ -8,9 +8,9 @@ type SmallCardProps = {
 
 const SmallCard: React.FC<SmallCardProps> = ({ value, label }) => {
   return (
-    <Container>
-      <Value>{value ?? '--'}</Value>
-      <Label>{label ?? '--'}</Label>
+    <Container testID="small-card-container">
+      <Value testID="value-text">{value ?? '--'}</Value>
+      <Label testID="label-text">{label ?? '--'}</Label>
     </Container>
   );
 };

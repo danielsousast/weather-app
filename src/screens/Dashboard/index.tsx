@@ -9,7 +9,7 @@ const Dashboard: React.FC = () => {
   return (
     <Container>
       <Content>
-        <HeaderText>{curentWeatherData.address}</HeaderText>
+        <HeaderText>{curentWeatherData?.address}</HeaderText>
         <PrimaryCard
           temperature={curentWeatherData?.currentTemperature}
           description={curentWeatherData?.description}

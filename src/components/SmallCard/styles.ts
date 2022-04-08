@@ -21,6 +21,6 @@ export const Value = styled.Text`
 `;
 
 export const Label = styled.Text`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fonts.regular};
 `;

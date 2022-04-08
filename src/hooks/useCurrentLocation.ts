@@ -8,7 +8,6 @@ type UseLocationResponse = {
 
 const useLocation = (): UseLocationResponse => {
   const [location, setLocation] = useState<LocationObjectCoords>(null);
-  const [curentWeatherData, setCurentWeatherData] = useState();
 
   const hasPermission = async (alreadyTried: boolean = false) => {
     const { status } = await Location.requestForegroundPermissionsAsync();

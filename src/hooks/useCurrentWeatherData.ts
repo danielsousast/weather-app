@@ -19,12 +19,14 @@ const useCurrentWeatherData = (): HookReturn => {
 
   async function getCurrentWeatherData(lat, lon) {
     if (!lat || !lon) return {};
+    setLoading(true);
     const httpRequest = new WheatherHttpRequest();
     const response = await httpRequest.getCurrentWeatherData(
       location?.latitude,
       location?.longitude
     );
     const data = factoryCurrentWeatherData(response);
+    setLoading(false);
     setCurentWeatherData(data);
   }
 
