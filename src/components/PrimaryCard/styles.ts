@@ -1,10 +1,10 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
   height: 250px;
   width: 100%;
   background: ${({ theme }) => theme.colors.blue};
-  border-radius: 12px;
+  border-radius: 16px;
   align-items: flex-end;
 `;
 

@@ -35,9 +35,7 @@ const PrimaryCard: React.FC<PrimaryCardProps> = ({ temperature }) => {
             <Temperature>{temperature ?? '--'}</Temperature>
           </RightContent>
         </Content>
-        <CardFooter>
-          <FooterText>Posse, Go Brazil</FooterText>
-        </CardFooter>
+        <CardFooter></CardFooter>
       </Wrapper>
       <ImageBrackgound source={require('../../assets/images/montain.png')} />
     </Container>

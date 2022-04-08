@@ -1,8 +1,8 @@
 export default {
   colors: {
-    background_primary: "#F7F7FA",
-    background_secondary: "#5773FE",
-    blue: "#2150CD",
-    white: "#fff",
+    background_primary: '#232535',
+    background_secondary: '#BBBDC8',
+    blue: '#2E3341',
+    white: '#fff',
   },
 };
