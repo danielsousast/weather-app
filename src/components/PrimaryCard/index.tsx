@@ -1,14 +1,11 @@
 import React from 'react';
 import {
-  CardFooter,
   Container,
   Content,
-  FooterText,
+  Description,
   Header,
   Image,
   ImageBrackgound,
-  LeftContent,
-  RightContent,
   Subtitle,
   Temperature,
   Title,
@@ -16,27 +13,33 @@ import {
 } from './styles';
 
 type PrimaryCardProps = {
-  temperature: number;
+  temperature: string;
+  description: string;
 };
 
-const PrimaryCard: React.FC<PrimaryCardProps> = ({ temperature }) => {
+const PrimaryCard: React.FC<PrimaryCardProps> = ({
+  temperature,
+  description,
+}) => {
+  const currentDate = new Date().toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: 'short',
+    year: '2-digit',
+  });
+
   return (
     <Container>
-      <Wrapper>
-        <Header>
-          <Title>Today</Title>
-          <Subtitle>Monday 12, Ap</Subtitle>
-        </Header>
-        <Content>
-          <LeftContent>
-            <Image source={require('../../assets/images/cloudy.png')} />
-          </LeftContent>
-          <RightContent>
-            <Temperature>{temperature ?? '--'}</Temperature>
-          </RightContent>
-        </Content>
-        <CardFooter></CardFooter>
-      </Wrapper>
+      <Header>
+        <Title>Hoje</Title>
+        <Subtitle>{currentDate}</Subtitle>
+      </Header>
+      <Content>
+        <Image source={require('../../assets/images/cloudy.png')} />
+
+        <Temperature>{temperature ?? '--'}</Temperature>
+        {description && <Description>{description}</Description>}
+      </Content>
+
       <ImageBrackgound source={require('../../assets/images/montain.png')} />
     </Container>
   );

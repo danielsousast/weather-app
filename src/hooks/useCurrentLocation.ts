@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
 import { LocationObjectCoords } from 'expo-location';
 
@@ -10,18 +10,17 @@ const useLocation = (): UseLocationResponse => {
   const [location, setLocation] = useState<LocationObjectCoords>(null);
   const [curentWeatherData, setCurentWeatherData] = useState();
 
-  const hasLocation = async (alreadyTried: boolean = false) => {
+  const hasPermission = async (alreadyTried: boolean = false) => {
     const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== Location.PermissionStatus.GRANTED && !alreadyTried) {
-      return hasLocation(true);
+      return hasPermission(true);
     }
-
     return true;
   };
 
   useEffect(() => {
     (async () => {
-      const permission = hasLocation();
+      const permission = hasPermission();
 
       if (!permission) return;
 

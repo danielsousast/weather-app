@@ -5,26 +5,22 @@ const { width } = Dimensions.get('window');
 const CARD_WIDTH = width / 3 - 24;
 
 export const Container = styled.View`
-  background-color: #2e3341;
-  height: ${CARD_WIDTH};
-  width: ${CARD_WIDTH}PX;
+  background-color: ${({ theme }) => theme.colors.background_secondary};
+  height: ${CARD_WIDTH}px;
+  width: ${CARD_WIDTH}px;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  shadow-color: #151515;
-  shadow-offset: 0px 2px;
-  shadow-opacity: 0.2;
-  shadow-radius: 8px;
-  elevation: 8;
 `;
 
 export const Value = styled.Text`
   font-size: 22px;
   margin-bottom: 4px;
   color: #fff;
-  font-weight: 600;
+  font-family: ${({ theme }) => theme.fonts.medium};
 `;
 
 export const Label = styled.Text`
   color: #fff;
+  font-family: ${({ theme }) => theme.fonts.regular};
 `;

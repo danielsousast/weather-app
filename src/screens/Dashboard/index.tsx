@@ -9,18 +9,15 @@ const Dashboard: React.FC = () => {
   return (
     <Container>
       <Content>
-        <HeaderText>Posse, Goiás</HeaderText>
-        <PrimaryCard temperature={curentWeatherData?.currentTemperature} />
+        <HeaderText>{curentWeatherData.address}</HeaderText>
+        <PrimaryCard
+          temperature={curentWeatherData?.currentTemperature}
+          description={curentWeatherData?.description}
+        ></PrimaryCard>
         <CardsWrapper>
-          <SmallCard
-            value={curentWeatherData?.minTemperature}
-            label="Min Temp"
-          />
-          <SmallCard
-            value={curentWeatherData?.maxTemperature}
-            label="Max Temp"
-          />
-          <SmallCard value={curentWeatherData?.humidity} label="Humidity" />
+          <SmallCard value={curentWeatherData?.minTemperature} label="Mínima" />
+          <SmallCard value={curentWeatherData?.maxTemperature} label="Máxima" />
+          <SmallCard value={curentWeatherData?.humidity} label="Humidade" />
         </CardsWrapper>
       </Content>
     </Container>

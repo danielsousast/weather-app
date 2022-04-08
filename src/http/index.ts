@@ -7,7 +7,7 @@ export class WheatherHttpRequest {
   async getCurrentWeatherData(lat, lon): Promise<CurentWeatherData> {
     try {
       const response = await api.get(
-        `/weather?lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=metric`
+        `/weather?lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=metric&lang=pt_br`
       );
       return response.data;
     } catch (error) {

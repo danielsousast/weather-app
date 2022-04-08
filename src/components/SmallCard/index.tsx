@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Label, Value } from './styles';
 
 type SmallCardProps = {
-  value?: number;
+  value?: string;
   label?: string;
 };
 
