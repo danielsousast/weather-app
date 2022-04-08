@@ -1,6 +1,4 @@
 import api from '../services/api';
-import Config from 'react-native-config';
-import { WEATHER_API_KEY } from 'react-native-dotenv';
 import { CurentWeatherData } from './types';
 
 export class WheatherHttpRequest {

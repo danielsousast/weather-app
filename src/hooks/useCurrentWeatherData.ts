@@ -6,10 +6,7 @@ import {
   factoryCurrentWeatherData,
 } from '../factory/factoryCurrentWeatherData';
 import { WheatherHttpRequest } from '../http';
-import { CurentWeatherData } from '../http/types';
 import useLocation from './useCurrentLocation';
-
-// import { Container } from './styles';
 
 type HookReturn = {
   curentWeatherData: FactoryCurrentWeatherData;
