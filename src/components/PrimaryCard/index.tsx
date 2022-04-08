@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   CardFooter,
   Container,
@@ -13,9 +13,13 @@ import {
   Temperature,
   Title,
   Wrapper,
-} from "./styles";
+} from './styles';
 
-const PrimaryCard: React.FC = ({ children }) => {
+type PrimaryCardProps = {
+  temperature: number;
+};
+
+const PrimaryCard: React.FC<PrimaryCardProps> = ({ temperature }) => {
   return (
     <Container>
       <Wrapper>
@@ -25,17 +29,17 @@ const PrimaryCard: React.FC = ({ children }) => {
         </Header>
         <Content>
           <LeftContent>
-            <Image source={require("../../assets/images/cloudy.png")} />
+            <Image source={require('../../assets/images/cloudy.png')} />
           </LeftContent>
           <RightContent>
-            <Temperature>30°</Temperature>
+            <Temperature>{temperature ?? '--'}</Temperature>
           </RightContent>
         </Content>
         <CardFooter>
           <FooterText>Posse, Go Brazil</FooterText>
         </CardFooter>
       </Wrapper>
-      <ImageBrackgound source={require("../../assets/images/montain.png")} />
+      <ImageBrackgound source={require('../../assets/images/montain.png')} />
     </Container>
   );
 };
