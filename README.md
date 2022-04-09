@@ -14,9 +14,9 @@
 
 <br>
 
-<p align="center" style="display:flex">
-  <img alt="Weather" src="./.github/screen1.png" width="50%">
-  <img alt="Weather" src="./.github/screen2.png" width="50%">
+<p align="center" style="display:flex;">
+  <img alt="Weather" src="./.github/screen1.png" width="200">
+  <img alt="Weather" src="./.github/screen2.png" width="200">
 
 </p>
 
