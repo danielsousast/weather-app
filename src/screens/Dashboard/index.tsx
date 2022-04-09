@@ -37,29 +37,36 @@ const Dashboard: React.FC = () => {
             </Wrapper>
           </SkelectonDefault>
         </HeaderWrapper>
-
-        <PrimaryCard
-          loading={loading}
-          image={WeatherConditionsIcons[curentWeatherData?.code]}
-          temperature={curentWeatherData?.currentTemperature}
-          description={curentWeatherData?.description}
-        />
+        <SkelectonDefault show={loading || !curentWeatherData}>
+          <PrimaryCard
+            loading={loading}
+            image={WeatherConditionsIcons[curentWeatherData?.code]}
+            temperature={curentWeatherData?.currentTemperature}
+            description={curentWeatherData?.description}
+          />
+        </SkelectonDefault>
         <CardsWrapper>
-          <SmallCard
-            value={curentWeatherData?.minTemperature}
-            label="Mínima"
-            loading={loading}
-          />
-          <SmallCard
-            value={curentWeatherData?.maxTemperature}
-            label="Máxima"
-            loading={loading}
-          />
-          <SmallCard
-            value={curentWeatherData?.humidity}
-            label="Humidade"
-            loading={loading}
-          />
+          <SkelectonDefault show={loading || !curentWeatherData}>
+            <SmallCard
+              value={curentWeatherData?.minTemperature}
+              label="Mínima"
+              loading={loading}
+            />
+          </SkelectonDefault>
+          <SkelectonDefault show={loading || !curentWeatherData}>
+            <SmallCard
+              value={curentWeatherData?.maxTemperature}
+              label="Máxima"
+              loading={loading}
+            />
+          </SkelectonDefault>
+          <SkelectonDefault show={loading || !curentWeatherData}>
+            <SmallCard
+              value={curentWeatherData?.humidity}
+              label="Humidade"
+              loading={loading}
+            />
+          </SkelectonDefault>
         </CardsWrapper>
         {curentWeatherData && (
           <LinkButton onPress={onSeeHistoricPress}>

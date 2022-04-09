@@ -1,6 +1,4 @@
-import { Skeleton } from 'moti/skeleton';
 import React from 'react';
-import SkelectonDefault from '../SkelectonDefault';
 import { Container, Label, Value } from './styles';
 
 type SmallCardProps = {
@@ -11,12 +9,10 @@ type SmallCardProps = {
 
 const SmallCard: React.FC<SmallCardProps> = ({ value, label, loading }) => {
   return (
-    <SkelectonDefault show={loading || !value}>
-      <Container testID="small-card-container">
-        <Value testID="value-text">{value ?? '--'}</Value>
-        <Label testID="label-text">{label ?? '--'}</Label>
-      </Container>
-    </SkelectonDefault>
+    <Container testID="small-card-container">
+      <Value testID="value-text">{value ?? '--'}</Value>
+      <Label testID="label-text">{label ?? '--'}</Label>
+    </Container>
   );
 };
 

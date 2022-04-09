@@ -35,22 +35,20 @@ const PrimaryCard: React.FC<PrimaryCardProps> = ({
   });
 
   return (
-    <SkelectonDefault show={loading || !temperature}>
-      <Container testID="primary-card-container">
-        <Header>
-          <Title>Hoje</Title>
-          <Subtitle>{currentDate}</Subtitle>
-        </Header>
-        <Content>
-          <Image source={image} resizeMode="contain" />
-          <Temperature testID="temperature-text">
-            {temperature ?? '--'}
-          </Temperature>
-          {description && <Description>{description}</Description>}
-        </Content>
-        <ImageBrackgound source={require('../../assets/images/montain.png')} />
-      </Container>
-    </SkelectonDefault>
+    <Container testID="primary-card-container">
+      <Header>
+        <Title>Hoje</Title>
+        <Subtitle>{currentDate}</Subtitle>
+      </Header>
+      <Content>
+        <Image source={image} resizeMode="contain" />
+        <Temperature testID="temperature-text">
+          {temperature ?? '--'}
+        </Temperature>
+        {description && <Description>{description}</Description>}
+      </Content>
+      <ImageBrackgound source={require('../../assets/images/montain.png')} />
+    </Container>
   );
 };
 

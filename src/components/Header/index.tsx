@@ -7,7 +7,7 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ onBackPress }) => {
   return (
-    <Container>
+    <Container testID="header-container">
       <BackButton onPress={onBackPress}>
         <BackIcon />
       </BackButton>
