@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { WeatherConditionsIcons } from '../../constants';
 import { useLocation } from '../../context/AppContext';
 import { Day } from '../../factory/factoryForecastData';
 import { weatherSlice } from '../../redux/reducers';
@@ -31,6 +32,7 @@ const Forecast: React.FC = () => {
         date={item.formatedDate}
         minTemperatrue={item.minTemperature}
         maxTemperatrue={item.maxTemperature}
+        icon={WeatherConditionsIcons[item.code]}
       />
     );
   }

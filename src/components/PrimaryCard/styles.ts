@@ -48,7 +48,7 @@ export const Subtitle = styled.Text`
 `;
 
 export const Image = styled.Image`
-  width: 120px;
+  width: 220px;
   height: 120px;
 `;
 

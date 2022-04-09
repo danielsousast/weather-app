@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import PrimaryCard from '../../components/PrimaryCard';
 import SmallCard from '../../components/SmallCard';
+import { WeatherConditionsIcons } from '../../constants';
 import useCurrentWeatherData from '../../hooks/useCurrentWeatherData';
 import {
   CardsWrapper,
@@ -20,11 +21,14 @@ const Dashboard: React.FC = () => {
     navigate('Forecast' as any);
   }
 
+  console.log(curentWeatherData?.code);
+
   return (
     <Container>
       <Content>
         <HeaderText>{curentWeatherData?.address}</HeaderText>
         <PrimaryCard
+          image={WeatherConditionsIcons[curentWeatherData?.code]}
           temperature={curentWeatherData?.currentTemperature}
           description={curentWeatherData?.description}
         ></PrimaryCard>
@@ -34,7 +38,7 @@ const Dashboard: React.FC = () => {
           <SmallCard value={curentWeatherData?.humidity} label="Humidade" />
         </CardsWrapper>
         <LinkButton onPress={onSeeHistoricPress}>
-          <LinkButtonText>Ver histórico</LinkButtonText>
+          <LinkButtonText>Proximos 7 dias</LinkButtonText>
         </LinkButton>
       </Content>
     </Container>

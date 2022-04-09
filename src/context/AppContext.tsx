@@ -2,11 +2,6 @@ import { LocationObjectCoords } from 'expo-location';
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 import * as Location from 'expo-location';
 
-interface SignInCredentials {
-  email: string;
-  password: string;
-}
-
 interface AppContextData {
   location: LocationObjectCoords;
 }

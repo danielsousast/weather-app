@@ -6,6 +6,7 @@ export type Day = {
   minTemperature: string;
   maxTemperature: string;
   description: string;
+  code: number;
 };
 
 export type FactoryForecastDaysData = Day[];
@@ -19,6 +20,7 @@ export function factoryForecastDaysData(
     minTemperature: `${item?.temp?.min?.toFixed()}°C`,
     maxTemperature: `${item?.temp?.max?.toFixed()}°C`,
     description: item.weather ? item.weather[0].description : '',
+    code: item.weather ? item.weather[0].id : 100,
   }));
 
   return days;

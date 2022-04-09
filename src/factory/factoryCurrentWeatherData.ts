@@ -7,6 +7,7 @@ export type FactoryCurrentWeatherData = {
   humidity: string;
   description: string;
   address: string;
+  code: number;
 };
 
 export function factoryCurrentWeatherData(
@@ -19,5 +20,6 @@ export function factoryCurrentWeatherData(
     humidity: `${data?.main?.humidity}%`,
     description: data?.weather ? data?.weather[0].description : '',
     address: `${data?.name}, ${data.sys.country}`,
+    code: data.weather ? data.weather[0].id : 100,
   };
 }

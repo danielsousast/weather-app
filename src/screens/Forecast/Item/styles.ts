@@ -18,3 +18,9 @@ export const Text = styled.Text`
 export const Temperature = styled.Text`
   color: ${({ theme }) => theme.colors.white};
 `;
+
+export const Icon = styled.Image`
+  height: 30px;
+  width: 30px;
+  margin-right: 16px;
+`;

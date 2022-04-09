@@ -13,11 +13,13 @@ import {
 } from './styles';
 
 type PrimaryCardProps = {
+  image: any;
   temperature?: string;
   description?: string;
 };
 
 const PrimaryCard: React.FC<PrimaryCardProps> = ({
+  image,
   temperature,
   description,
 }) => {
@@ -34,14 +36,12 @@ const PrimaryCard: React.FC<PrimaryCardProps> = ({
         <Subtitle>{currentDate}</Subtitle>
       </Header>
       <Content>
-        <Image source={require('../../assets/images/cloudy.png')} />
-
+        <Image source={image} resizeMode="contain" />
         <Temperature testID="temperature-text">
           {temperature ?? '--'}
         </Temperature>
         {description && <Description>{description}</Description>}
       </Content>
-
       <ImageBrackgound source={require('../../assets/images/montain.png')} />
     </Container>
   );
