@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from '../context/AppContext';
 import {
   FactoryCurrentWeatherData,
   factoryCurrentWeatherData,
 } from '../factory/factoryCurrentWeatherData';
 import { WheatherHttpRequest } from '../http';
-import useLocation from './useCurrentLocation';
 
 type HookReturn = {
   curentWeatherData: FactoryCurrentWeatherData;
@@ -12,14 +12,16 @@ type HookReturn = {
 };
 
 const useCurrentWeatherData = (): HookReturn => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [curentWeatherData, setCurentWeatherData] =
     useState<FactoryCurrentWeatherData>();
   const { location } = useLocation();
 
   async function getCurrentWeatherData(lat, lon) {
-    if (!lat || !lon) return {};
-    setLoading(true);
+    if (!lat || !lon) {
+      setLoading(false);
+      return;
+    }
     const httpRequest = new WheatherHttpRequest();
     const response = await httpRequest.getCurrentWeatherData(
       location?.latitude,

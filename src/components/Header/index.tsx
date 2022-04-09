@@ -1,8 +1,19 @@
 import React from 'react';
-import { Container } from './styles';
+import { Container, BackIcon, HeaderText, BackButton } from './styles';
 
-const Header: React.FC = () => {
-  return <Container />;
+type HeaderProps = {
+  onBackPress: () => void;
+};
+
+const Header: React.FC<HeaderProps> = ({ onBackPress }) => {
+  return (
+    <Container>
+      <BackButton onPress={onBackPress}>
+        <BackIcon />
+      </BackButton>
+      <HeaderText>Previsão próximos 7 dias</HeaderText>
+    </Container>
+  );
 };
 
 export default Header;

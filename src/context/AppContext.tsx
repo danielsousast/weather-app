@@ -1,6 +1,7 @@
 import { LocationObjectCoords } from 'expo-location';
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 import * as Location from 'expo-location';
+import { Alert } from 'react-native';
 
 interface AppContextData {
   location: LocationObjectCoords;
@@ -16,22 +17,17 @@ function LocationProvider({ children }: AppProviderProps) {
   const [location, setLocation] = useState<LocationObjectCoords>(
     {} as LocationObjectCoords
   );
-  const hasPermission = async (alreadyTried: boolean = false) => {
-    const { status } = await Location.requestForegroundPermissionsAsync();
-    if (status !== Location.PermissionStatus.GRANTED && !alreadyTried) {
-      return hasPermission(true);
-    }
-    return true;
-  };
 
   async function getLocation() {
     try {
-      const permission = hasPermission();
-
-      if (!permission) return;
-
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== Location.PermissionStatus.GRANTED) {
+        Alert.alert(
+          'Permita que o WeatherApp acesse a localizacao do seu dispositivo.'
+        );
+        return;
+      }
       const currentLocation = await Location.getCurrentPositionAsync({});
-      console.log('currentLocation', currentLocation);
       setLocation(currentLocation.coords);
     } catch (error) {
       throw new Error(error as string);

@@ -10,13 +10,17 @@ const renderWithTheme = (component) => {
 
 describe('PrimaryCard Component', () => {
   test('should be render correctly', () => {
-    const { getByTestId } = renderWithTheme(<PrimaryCard />);
+    const { getByTestId } = renderWithTheme(
+      <PrimaryCard loading={false} image="any_image" />
+    );
     const component = getByTestId('primary-card-container');
     expect(component).toBeTruthy();
   });
 
   test('should render empty temperature state', () => {
-    const { getByTestId } = renderWithTheme(<PrimaryCard />);
+    const { getByTestId } = renderWithTheme(
+      <PrimaryCard loading={false} image="any_image" />
+    );
     const component = getByTestId('temperature-text');
     expect(component.children[0]).toBe('--');
   });
