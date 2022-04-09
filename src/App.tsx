@@ -11,6 +11,9 @@ import {
 } from '@expo-google-fonts/roboto';
 import AppLoading from 'expo-app-loading';
 import { Navigation } from './navigation';
+import { Provider } from 'react-redux';
+import { store } from './redux';
+import { AppProvider } from './context';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -23,9 +26,13 @@ export default function App() {
     return <AppLoading />;
   }
   return (
-    <ThemeProvider theme={theme}>
-      <Navigation />
-      <StatusBar style="light" />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <AppProvider>
+          <Navigation />
+          <StatusBar style="light" />
+        </AppProvider>
+      </ThemeProvider>
+    </Provider>
   );
 }

@@ -6,7 +6,7 @@ type UseLocationResponse = {
   location: LocationObjectCoords;
 };
 
-const useLocation = (): UseLocationResponse => {
+const useCurrentLocation = (): UseLocationResponse => {
   const [location, setLocation] = useState<LocationObjectCoords>(null);
 
   const hasPermission = async (alreadyTried: boolean = false) => {
@@ -30,4 +30,4 @@ const useLocation = (): UseLocationResponse => {
   return { location };
 };
 
-export default useLocation;
+export default useCurrentLocation;

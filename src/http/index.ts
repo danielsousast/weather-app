@@ -1,5 +1,5 @@
 import api from '../services/api';
-import { CurentWeatherData, HistoricWeatherData } from './types';
+import { CurentWeatherData, ForecastWeatherData } from './types';
 
 export class WheatherHttpRequest {
   apiKey = 'afa8ac8d9c0ac9d57c65a7ac53d29e17';
@@ -18,10 +18,10 @@ export class WheatherHttpRequest {
     return {} as CurentWeatherData;
   }
 
-  async getHistoricWeatherData(lat, lon): Promise<HistoricWeatherData> {
+  async getForecastData(lat, lon): Promise<ForecastWeatherData> {
     try {
       const response = await api.get(
-        `/weather?lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=metric&lang=pt_br`
+        `/onecall?lat=${lat}&lon=${lon}&appid=${this.apiKey}&exclude=hourly&units=metric&lang=pt_br`
       );
       return response.data;
     } catch (error) {
@@ -29,6 +29,6 @@ export class WheatherHttpRequest {
         console.log(JSON.stringify(error, null, 2));
       }
     }
-    return {} as HistoricWeatherData;
+    return {} as ForecastWeatherData;
   }
 }

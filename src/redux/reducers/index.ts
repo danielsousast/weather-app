@@ -1,25 +1,36 @@
+import {
+  GetForecastDataPayload,
+  GetForecastDataSuccessPayload,
+  InitialState,
+} from '../types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface CounterState {
-  value: number;
-}
-
-const initialState: CounterState = {
-  value: 0,
+const initialState: InitialState = {
+  loading: false,
+  error: false,
+  forecast: null,
 };
 
 export const weatherSlice = createSlice({
   name: 'weather',
   initialState,
   reducers: {
-    getWeatherHistoric: (state) => {
-      state.value += 1;
+    getForecastData: (
+      state,
+      { payload }: PayloadAction<GetForecastDataPayload>
+    ) => {
+      state.loading = true;
     },
-    getWeatherHistoricSuccess: (state) => {
-      state.value -= 1;
+    getForecastDataSuccess: (
+      state,
+      { payload }: PayloadAction<GetForecastDataSuccessPayload>
+    ) => {
+      state.forecast = payload;
+      state.loading = false;
     },
-    getWeatherHistoricFailed: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+    getForecastDataFailed: (state) => {
+      state.error = true;
+      state.loading = false;
     },
   },
 });

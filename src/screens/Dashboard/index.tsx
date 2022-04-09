@@ -17,7 +17,7 @@ const Dashboard: React.FC = () => {
   const { curentWeatherData } = useCurrentWeatherData();
 
   function onSeeHistoricPress() {
-    navigate('Historic' as any);
+    navigate('Forecast' as any);
   }
 
   return (
