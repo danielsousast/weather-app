@@ -11,6 +11,7 @@ export const ConditionsIcons = {
 };
 
 export const WeatherConditionsIcons = {
+  100: ConditionsIcons.Mist,
   200: ConditionsIcons.Thunderstorm,
   201: ConditionsIcons.Thunderstorm,
   202: ConditionsIcons.Thunderstorm,

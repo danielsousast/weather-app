@@ -16,7 +16,7 @@ export const Container = styled.View`
 export const Value = styled.Text`
   font-size: 22px;
   margin-bottom: 4px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fonts.medium};
 `;
 

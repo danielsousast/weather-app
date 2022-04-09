@@ -1,5 +1,4 @@
 import { useNavigation, useTheme } from '@react-navigation/native';
-import { Skeleton } from 'moti/skeleton';
 import React from 'react';
 import PrimaryCard from '../../components/PrimaryCard';
 import SkelectonDefault from '../../components/SkelectonDefault';

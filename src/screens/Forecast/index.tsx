@@ -1,6 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
-import { Animated } from 'react-native';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
@@ -45,7 +44,6 @@ const Forecast: React.FC = () => {
   return (
     <Container>
       <Header onBackPress={goBack} />
-
       {loading ? (
         <Loading />
       ) : (

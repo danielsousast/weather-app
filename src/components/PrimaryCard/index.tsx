@@ -1,6 +1,4 @@
 import React from 'react';
-import { Skeleton } from 'moti/skeleton';
-
 import {
   Container,
   Content,
@@ -13,7 +11,6 @@ import {
   Title,
   Wrapper,
 } from './styles';
-import SkelectonDefault from '../SkelectonDefault';
 
 type PrimaryCardProps = {
   image: any;
