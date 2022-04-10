@@ -8,11 +8,7 @@ export const Container = styled.View`
   background: ${({ theme }) => theme.colors.blue};
   border-radius: 16px;
   height: ${height / 2}px;
-`;
-
-export const Wrapper = styled.View`
-  width: 100%;
-  padding: 24px;
+  flex-wrap: wrap;
 `;
 
 export const Header = styled.View`

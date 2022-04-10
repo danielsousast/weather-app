@@ -69,14 +69,7 @@ export type WeatherDaily = {
   dew_point: number;
   wind_speed: number;
   wind_deg: number;
-  weather: [
-    {
-      id: number;
-      main: string;
-      description: string;
-      icon: string;
-    }
-  ];
+  weather: Weather[];
   clouds: number;
   pop: number;
   rain: number;

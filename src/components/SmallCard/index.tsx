@@ -2,12 +2,11 @@ import React from 'react';
 import { Container, Label, Value } from './styles';
 
 type SmallCardProps = {
-  loading: boolean;
   value?: string;
   label?: string;
 };
 
-const SmallCard: React.FC<SmallCardProps> = ({ value, label, loading }) => {
+const SmallCard: React.FC<SmallCardProps> = ({ value, label }) => {
   return (
     <Container testID="small-card-container">
       <Value testID="value-text">{value ?? '--'}</Value>

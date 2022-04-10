@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-
 import { InitialState } from './types';
 
 export type AppState = {

@@ -17,7 +17,7 @@ export const weatherSlice = createSlice({
   reducers: {
     getForecastData: (
       state,
-      { payload }: PayloadAction<GetForecastDataPayload>
+      _action: PayloadAction<GetForecastDataPayload>
     ) => {
       state.loading = true;
     },

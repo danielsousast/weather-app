@@ -7,13 +7,13 @@ interface AppContextData {
   location: LocationObjectCoords;
 }
 
-interface AppProviderProps {
+interface ProviderProps {
   children: ReactNode;
 }
 
 const AppContext = createContext<AppContextData>({} as AppContextData);
 
-function LocationProvider({ children }: AppProviderProps) {
+function Provider({ children }: ProviderProps) {
   const [location, setLocation] = useState<LocationObjectCoords>(
     {} as LocationObjectCoords
   );
@@ -53,4 +53,4 @@ function useLocation(): AppContextData {
   return context;
 }
 
-export { LocationProvider, useLocation };
+export { Provider, useLocation };

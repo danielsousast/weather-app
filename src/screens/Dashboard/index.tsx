@@ -1,8 +1,8 @@
-import { useNavigation, useTheme } from '@react-navigation/native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import SmallCard from '../../components/SmallCard';
 import PrimaryCard from '../../components/PrimaryCard';
 import SkelectonDefault from '../../components/SkelectonDefault';
-import SmallCard from '../../components/SmallCard';
 import { WeatherConditionsIcons } from '../../constants';
 import useCurrentWeatherData from '../../hooks/useCurrentWeatherData';
 import {
@@ -49,22 +49,16 @@ const Dashboard: React.FC = () => {
             <SmallCard
               value={curentWeatherData?.minTemperature}
               label="Mínima"
-              loading={loading}
             />
           </SkelectonDefault>
           <SkelectonDefault show={loading || !curentWeatherData}>
             <SmallCard
               value={curentWeatherData?.maxTemperature}
               label="Máxima"
-              loading={loading}
             />
           </SkelectonDefault>
           <SkelectonDefault show={loading || !curentWeatherData}>
-            <SmallCard
-              value={curentWeatherData?.humidity}
-              label="Humidade"
-              loading={loading}
-            />
+            <SmallCard value={curentWeatherData?.humidity} label="Humidade" />
           </SkelectonDefault>
         </CardsWrapper>
         {curentWeatherData && (

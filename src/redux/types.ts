@@ -1,5 +1,4 @@
 import { FactoryForecastDaysData } from '../factory/factoryForecastData';
-import { ForecastWeatherData } from '../http/types';
 
 export interface InitialState {
   loading: boolean;

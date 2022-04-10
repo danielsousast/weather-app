@@ -1,10 +1,9 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { LocationObjectCoords } from 'expo-location';
 import { put } from 'redux-saga/effects';
-import { factoryForecastDaysData } from '../../factory/factoryForecastData';
-import { WheatherHttpRequest } from '../../http';
+import { PayloadAction } from '@reduxjs/toolkit';
 import { weatherSlice } from '../reducers';
+import { WheatherHttpRequest } from '../../http';
 import { GetForecastDataPayload } from '../types';
+import { factoryForecastDaysData } from '../../factory/factoryForecastData';
 
 export function* getForecastData({
   payload: { lat, lon },

@@ -1,14 +1,15 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
+
+import Item from './Item';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
-import { WeatherConditionsIcons } from '../../constants';
 import { useLocation } from '../../context/AppContext';
+import { WeatherConditionsIcons } from '../../constants';
 import { Day } from '../../factory/factoryForecastData';
-import { weatherSlice } from '../../redux/reducers';
 import { AppState } from '../../redux/selectors';
-import Item from './Item';
+import { weatherSlice } from '../../redux/reducers';
 import { Container, Content, List } from './styles';
 
 const Forecast: React.FC = () => {

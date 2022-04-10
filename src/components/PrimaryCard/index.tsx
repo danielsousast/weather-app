@@ -9,7 +9,6 @@ import {
   Subtitle,
   Temperature,
   Title,
-  Wrapper,
 } from './styles';
 
 type PrimaryCardProps = {

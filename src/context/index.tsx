@@ -1,12 +1,12 @@
 import React from 'react';
-import { LocationProvider } from './AppContext';
+import { Provider } from './AppContext';
 
 interface Props {
   children: React.ReactNode;
 }
 
 function AppProvider({ children }: Props) {
-  return <LocationProvider>{children}</LocationProvider>;
+  return <Provider>{children}</Provider>;
 }
 
 export { AppProvider };
