@@ -24,7 +24,7 @@
 Link Expo: https://expo.dev/@danielsousast/WeatherApp
 
 <p align="center">
-  <img alt="Weather" src="./.github/expo.svg" width="300">
+  <img alt="Weather" src="./.github/expoqr.svg" width="300">
 </p>
 
 ## :rocket: Tecnologias
