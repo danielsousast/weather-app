@@ -12,6 +12,8 @@ export const Container = styled.View`
 export const BackButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
+  width: 45px;
+  height: 45px;
 `;
 
 export const BackIcon = styled(SimpleLineIcons).attrs(({ theme }) => ({

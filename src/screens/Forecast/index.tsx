@@ -10,9 +10,11 @@ import { WeatherConditionsIcons } from '../../constants';
 import { Day } from '../../factory/factoryForecastData';
 import { AppState } from '../../redux/selectors';
 import { weatherSlice } from '../../redux/reducers';
-import { Container, Content, List } from './styles';
+import { Container, Content } from './styles';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Forecast: React.FC = () => {
+  const hasSafe = useSafeAreaInsets().bottom;
   const dispatch = useDispatch();
   const { goBack } = useNavigation();
   const { location } = useLocation();
@@ -31,9 +33,10 @@ const Forecast: React.FC = () => {
     dispatch(weatherSlice.actions.getForecastData({ lat, lon }));
   }
 
-  function renderItem({ item }: { item: Day }) {
+  function renderItem(item: Day) {
     return (
       <Item
+        key={item.date}
         date={item.formatedDate}
         minTemperatrue={item.minTemperature}
         maxTemperatrue={item.maxTemperature}
@@ -43,19 +46,12 @@ const Forecast: React.FC = () => {
   }
 
   return (
-    <Container>
+    <Container hasSafe={hasSafe}>
       <Header onBackPress={goBack} />
       {loading ? (
         <Loading />
       ) : (
-        <Content>
-          <List
-            data={forecast}
-            renderItem={renderItem}
-            ren
-            keyExtractor={(item) => String(item.date)}
-          />
-        </Content>
+        <Content>{forecast?.map((item) => renderItem(item))}</Content>
       )}
     </Container>
   );
