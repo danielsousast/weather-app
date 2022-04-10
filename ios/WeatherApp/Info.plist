@@ -51,5 +51,7 @@
 	<false/>
   <key>UIStatusBarStyle</key>
   <string>UIStatusBarStyleDefault</string>
+  <key>NSLocationUsageDescription</key>
+	<string>WeatherApp gostaria de acessar sua localizacao.</string>
 </dict>
 </plist>

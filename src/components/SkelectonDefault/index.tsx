@@ -15,7 +15,7 @@ const SkelectonDefault: React.FC<SkelectonDefaultProps> = ({
   return (
     <Skeleton
       show={show}
-      colors={['#363643', '#2e3341']}
+      colors={['#3f3f5a', '#242937']}
       radius={16}
       width={width}
     >
